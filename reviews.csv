@@ -1,0 +1,34 @@
+data = {
+    'review': [
+        "This movie was amazing!",
+        "The food was terrible.",
+        "I had a neutral experience.",
+        "Great product, highly recommend.",
+        "Very disappointing service.",
+        "Absolutely loved the plot twists! A masterpiece.",
+        "The acting was subpar, and the storyline was predictable.",
+        "A solid film with decent performances.",
+        "One of the best movies I've seen this year! Highly engaging.",
+        "Waste of time and money. Avoid at all costs.",
+        "The cinematography was breathtaking. A visual treat.",
+        "I expected more from the director. Disappointing.",
+        "A heartwarming story that left me with a smile.",
+        "The special effects were impressive, but the script was weak.",
+        "A surprisingly good film. I went in with low expectations and was blown away.",
+        "The pacing was off, and the movie felt too long.",
+        "A must-watch for any cinephile. Brilliant!",
+        "The dialogue was cheesy and the characters were one-dimensional.",
+        "A decent popcorn flick. Good for a casual viewing.",
+        "A truly unforgettable cinematic experience. Highly recommended."
+    ],
+    'sentiment': [
+        'positive', 'negative', 'neutral', 'positive', 'negative',
+        'positive', 'negative', 'neutral', 'positive', 'negative',
+        'positive', 'negative', 'positive', 'negative', 'positive', 'negative',
+        'positive', 'negative', 'neutral', 'positive'
+    ]
+}
+
+df = pd.DataFrame(data)
+df.to_csv('reviews.csv', index=False)
+print("reviews.csv created successfully!")

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Movie Review Sentiment Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ff9800;
+            background-color: #252525;
+            color: #f0f0f0;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            background-color: #ff9800;
+            color: #1e1e1e;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #e68900;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #252525;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+        }
+
+        .positive { border-color: #4CAF50; color: #4CAF50; }
+        .neutral { border-color: #FFC107; color: #FFC107; }
+        .negative { border-color: #F44336; color: #F44336; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎬 IMDB Movie Review Sentiment Analysis 🎥</h2>
+        <form action="/predict" method="post">
+            <label for="text">Reviewer Name:</label>
+            <input type="text" name="text" id="text" placeholder="Enter your name" required>
+
+            <label for="feedback">Movie Review:</label>
+            <textarea name="feedback" id="feedback" placeholder="Write your review here..." required></textarea>
+
+            <button type="submit">Analyze Sentiment</button>
+
+            {% if sentiment %}
+            <div class="result {{ sentiment|lower }}">
+                <strong>Sentiment:</strong> {{ sentiment }}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body {
+    background-image: url('/static/bg_img.jpg'); /* Ensure correct path */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-size: cover; /* Ensures full coverage */
+    background-attachment: fixed; /* Keeps it fixed on scroll */
+    background-position: center center; /* Centers the image */
+    height: 100vh; /* Makes sure the full screen is covered */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
